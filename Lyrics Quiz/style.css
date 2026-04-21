@@ -1,0 +1,336 @@
+/* ====== 背景と全体設定 ====== */
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at center, #0a0a23 0%, #000000 100%);
+  color: white;
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
+}
+
+
+
+/* ====== タイトル・サブタイトル ====== */
+#artistTitle {
+  margin-top: 150px;
+  text-align: center;
+  color: #00ffff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  font-size: 2.5em;
+}
+
+#artistSubtitle {
+  margin-top: 10px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.2em;
+}
+
+/* ====== ボタンパネルの配置 ====== */
+#stopWatchPanel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+/* ====== アーティスト選択ボタン ====== */
+#stopWatchPanel button {
+  background: linear-gradient(145deg, #111122, #1f1f3a);
+  color: white;
+  border: 1px solid #00ffff;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 5px #00ffff40;
+  width: 180px;
+}
+
+#stopWatchPanel button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #00ffff;
+}
+
+/* ====== ボタン内の画像 ====== */
+#stopWatchPanel button {
+  width: 180px;
+  height: 50px;
+  overflow: hidden;
+  /* 既存の背景やボーダーなど */
+}
+
+#stopWatchPanel button img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #00ffff40;
+  display: block;
+}
+
+/* ====== 全アーティスト（マスターモード）ボタン ====== */
+.master-quiz-btn {
+  background: linear-gradient(145deg, #ff00ff, #aa00aa) !important;
+  border-color: #ff00ff !important;
+  font-weight: bold;
+  box-shadow: 0 0 10px #ff00ff80 !important;
+}
+
+.master-quiz-btn:hover {
+  box-shadow: 0 0 20px #ff00ff !important;
+}
+
+
+/* ====== クイズ画面の背景切り替え用 ====== */
+#quizPanel {
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  padding-top: 0 !important;
+  text-align: center;
+  color: #ffffff;
+  text-shadow:
+    -1px -1px 2px #000000aa,
+    1px -1px 2px #000000aa,
+    -1px 1px 2px #000000aa,
+    1px 1px 2px #000000aa;
+  font-size: 2.5em;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.quiz-bg-Mrs,
+.quiz-bg-yonezu,
+.quiz-bg-mahumahu,
+.quiz-bg-arashi,
+.quiz-bg-deco27,
+.quiz-bg-Kanaria,
+.quiz-bg-aina,
+.quiz-bg-pedro,
+.quiz-bg-all {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.quiz-bg-Mrs {
+  background-image: url('image/Mrs.jpeg');
+}
+
+.quiz-bg-yonezu {
+  background-image: url('image/photo01.jpg');
+}
+
+.quiz-bg-mahumahu {
+  background-image: url('image/まふまふ3.jpg');
+}
+
+.quiz-bg-arashi {
+  background-image: url('image/arashi.jpg');
+}
+
+.quiz-bg-deco27 {
+  background-image: url('image/Deco272.jpg');
+}
+
+.quiz-bg-Kanaria {
+  background-image: url('image/Kanaria2.jpg');
+}
+
+.quiz-bg-aina {
+  background-image: url('image/アイナ.jpg');
+}
+
+.quiz-bg-pedro {
+  background-image: url('image/アユニD.jpg');
+}
+
+.quiz-bg-all {
+  background: linear-gradient(135deg, #0a0a23 0%, #4a004a 50%, #000000 100%);
+}
+
+/* ===== タイトルのスタイル（すでに .title にある場合は不要） ===== */
+#difficultyTitle {
+  margin-top: 150px;
+  text-align: center;
+  color: #00ffff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  font-size: 2em;
+}
+
+/* ===== ボタンコンテナ：横並びで中央寄せ ===== */
+.difficultyButtonContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+/* ===== 難易度ボタン：Mステ風に統一 ===== */
+.difficultyButton {
+  background: linear-gradient(145deg, #111122, #1f1f3a);
+  color: white;
+  border: 1px solid #00ffff;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 5px #00ffff40;
+  min-width: 20px;
+}
+
+.difficultyButton:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #00ffff;
+}
+
+
+/* ===== 戻るボタン：同様のスタイルで統一感 ===== */
+#backToArtist {
+  display: block;
+  margin: 40px auto 0;
+  background: linear-gradient(145deg, #111122, #1f1f3a);
+  color: white;
+  border: 1px solid #00ffff;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 5px #00ffff40;
+}
+
+#backToArtist:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00ffff;
+}
+
+/* ===== 高画質画像表示のためのスタイル ===== */
+#stopWatchPanel button img,
+.quiz-bg-Mrs,
+.quiz-bg-yonezu,
+.quiz-bg-mahumahu,
+.quiz-bg-arashi,
+.quiz-bg-deco27,
+.quiz-bg-Kanaria,
+.quiz-bg-aina,
+.quiz-bg-pedro,
+.quiz-bg-all {
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* ===== 背景画像が常に全体に収まるように調整 ===== */
+#quizPanel.quiz-bg-Mrs,
+#quizPanel.quiz-bg-yonezu,
+#quizPanel.quiz-bg-mahumahu,
+#quizPanel.quiz-bg-arashi,
+#quizPanel.quiz-bg-deco27,
+#quizPanel.quiz-bg-Kanaria,
+#quizPanel.quiz-bg-aina,
+#quizPanel.quiz-bg-pedro,
+#quizPanel.quiz-bg-all {
+  background-size: cover;
+  /* 枠を埋める（はみ出し可） */
+  background-position: center;
+  /* 真ん中に表示 */
+  background-repeat: no-repeat;
+  /* 繰り返さない */
+  width: 980px;
+  height: 1486.67px;
+  margin: 0 auto;
+  /* 中央寄せ（画面中央にしたい場合） */
+  max-width: 100%;
+  max-height: 100vh;
+}
+
+.difficultyButton.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#songListContainer a {
+  color: #00ffff;
+  text-align: center;
+}
+
+.choice-button {
+  background: linear-gradient(145deg, #111122, #1f1f3a);
+  color: white;
+  border: 1px solid #00ffff;
+  border-radius: 12px;
+  padding: 6px 14px;
+  /* 少し小さめに */
+  font-size: 14px;
+  /* 少し小さめに */
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 5px #00ffff40;
+  min-width: 60px;
+  /* 小さめ */
+  margin: 5px;
+  display: inline-block;
+  text-align: center;
+  width: 30%;
+  /* 3つ並べるために幅を30%に */
+  box-sizing: border-box;
+  /* padding込みで幅を計算 */
+}
+
+.choice-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #00ffff;
+}
+
+/* 選択肢全体の親要素（choicesなど）に横並び用スタイル */
+#choices {
+  display: flex;
+  justify-content: space-between;
+  /* ボタン間のスペース均等 */
+  flex-wrap: nowrap;
+  max-width: 480px;
+  /* 横幅の最大値（任意調整可） */
+  margin: 0 auto;
+  /* 中央寄せ */
+}
+
+/* ====== 1問ごとのタイマー ====== */
+#per-question-timer-container {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 0 20px 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 2px solid rgba(0, 255, 255, 0.5);
+}
+
+#timer-bar {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
+  background-size: 200% auto;
+  transition: width 0.1s linear;
+}
+
+#timer-text {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 18px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  font-weight: bold;
+}

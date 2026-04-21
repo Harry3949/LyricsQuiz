@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>歌詞クイズ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1 class="title" id="artistTitle">歌詞クイズ</h1>
+  <h2 class="title" id="artistSubtitle">好きなアーティストを選んでね。</h2>
+  <div id="stopWatchPanel">
+    <button><img src="image/リイシューねこちゃん.jpg" alt="米津玄師">米津玄師</button>
+    <button><img src="image/Mrs.GREEEN APPLE.jpg" alt="Mrs. GREEN APPLE">Mrs. GREEN APPLE</button>
+    <button><img src="image/嵐.jpg" alt="嵐">嵐</button>
+    <button><img src="image/まふまふ.jpg" alt="まふまふ">まふまふ</button>
+    <button><img src="image/deco27.jpg" alt="DECO*27">DECO*27</button>
+    <button><img src="image/Kanaria.jpg" alt="Kanaria">Kanaria</button>
+    <button><img src="image/aina.jpg" alt="アイナ・ジ・エンド">アイナ・ジ・エンド</button>
+    <button><img src="image/PEDRO.jpg" alt="PEDRO">PEDRO</button>
+    <button id="allArtistsButton" class="master-quiz-btn">全アーティスト</button>
+  </div>
+
+  <div id="difficultyPanel" style="display:none;">
+    <h2 class="title" id="difficultyTitle">難易度を選んでね</h2>
+    <div class="difficultyButtonContainer">
+      <button class="difficultyButton" data-desc="有名な曲">かんたん</button>
+      <button class="difficultyButton" data-desc="ちょいマニアック">ふつう</button>
+      <button class="difficultyButton" data-desc="マニアック">むずかしい</button>
+    </div>
+    <button id="backToArtist">← 戻る</button>
+  </div>
+
+  <div id="quizPanel" style="display:none;">
+    <div id="per-question-timer-container">
+      <div id="timer-bar"></div>
+      <span id="timer-text">--</span>
+    </div>
+    <audio id="bgm" src="bgm/floweranddancer.mp3" loop></audio>
+    <p id="question-counter">1問/10問</p>
+
+    <p id="question-artist" style="font-weight:bold; font-size: 1.2em; color: #444;"></p>
+
+    <p id="question-text">ここに歌詞の一部が表示されます</p>
+    <div id="choices" class="choices-container"></div>
+    <p id="feedback"></p>
+    <button id="backToDifficulty">← 戻る</button>
+  </div>
+
+  <div id="songListPanel" style="display:none; padding: 1em;">
+    <h2>出題された曲一覧</h2>
+    <div id="songListContainer"></div>
+    <p>※リンクがない楽曲は、お使いの音楽サービスでお楽しみください。</p>
+    <button id="backToResult">← 結果画面に戻る</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
